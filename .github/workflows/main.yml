@@ -2,12 +2,17 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
-  build:
+  update:
+    name: update thing
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Say hello
-        run: echo "Hello GitHub Actions!"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run update step
+        run: echo "update thing"
